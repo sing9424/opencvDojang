@@ -10,28 +10,29 @@ img_gray = cv2.imread('data/lenna.bmp', cv2.IMREAD_GRAYSCALE)
 img_bgr = cv2.imread('data/lenna.bmp')
 
 # 파일을 못 찾아서 이미지를 못 읽어온 경우
+
 # 프로그램 종료
 if img_gray is None or img_bgr is None:
     print('Image load failed!')
     sys.exit()
 
-# 창의 이름을 정의
-cv2.namedWindow('image_gray')
+
+# 창의 이름을 정의..0
+cv2.namedWindow('image_gray',flags=cv2.WINDOW_GUI_NORMAL)
 cv2.namedWindow('image_bgr')
 
-# 불러온 이미지를 창에 띄워준다.
-# 'image' 창에 읽어온 img 배열을 출력한다.
+#불러온 이미지를 창에 띄워준다.
+# 'image'창에 읽어온 img 배열을 출력한다.
 cv2.imshow('image_gray', img_gray)
 cv2.imshow('image_bgr', img_bgr)
 
-# 키 입력을 기다리는 함수
-# 함수 안에 값을 입력, 단위 : ms
-# waitKey 함수에 지연값을 설정하지 않으면 무한 대기
+# 키입력을 기다리는 함수
+# 함수 안에 값을 입력 단위 : ms
+# waitKey함수에 지연값을 설정하지 않으면 무한대기
 # 키보드 입력이 들어올때까지
 # 키보드를 눌러야 터미널 무한 로딩이 끝남
 cv2.waitKey()
 
 # 모든 창을 다 닫는다.
 cv2.destroyAllWindows()
-
 
